@@ -2,7 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp2.2</TargetFramework>
-        <RootNamespace>nwoolcan_giackaloz</RootNamespace>
+        <RootNamespace>nwoolcan</RootNamespace>
     </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="src\test" />
+    </ItemGroup>
 
 </Project>
