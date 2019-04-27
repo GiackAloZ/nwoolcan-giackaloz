@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/16.0.1/build/netcoreapp1.0" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="$USER_HOME$/.nuget/packages/mstest.testadapter/2.0.0-beta2/build/_common/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/mstest.testadapter/2.0.0-beta2/build/_common/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/mstest.testadapter/2.0.0-beta2/build/netcoreapp1.0/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
     <e p="$USER_HOME$/Library/Caches/Rider2018.3/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/Rider2018.3/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_nwoolcan-giackaloz.1058763985.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
@@ -16,12 +22,14 @@
           </e>
         </e>
         <e p="src" t="Include">
-          <e p="main" t="Include">
+          <e p="UnitTests" t="Include">
             <e p="utils" t="Include">
-              <e p="Result.cs" t="Include" />
+              <e p="TestResult.cs" t="Include" />
             </e>
           </e>
-          <e p="test" t="Include" />
+          <e p="utils" t="Include">
+            <e p="Result.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="nwoolcan-giackaloz.sln" t="IncludeFlat" />
