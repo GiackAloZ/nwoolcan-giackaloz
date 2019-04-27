@@ -25,10 +25,12 @@
           <e p="UnitTests" t="Include">
             <e p="utils" t="Include">
               <e p="TestResult.cs" t="Include" />
+              <e p="TestUnitOfMeasure.cs" t="Include" />
             </e>
           </e>
           <e p="utils" t="Include">
             <e p="Result.cs" t="Include" />
+            <e p="UnitOfMeasure.cs" t="Include" />
           </e>
         </e>
       </e>
