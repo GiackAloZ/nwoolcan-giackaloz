@@ -24,6 +24,7 @@
         <e p="src" t="Include">
           <e p="UnitTests" t="Include">
             <e p="utils" t="Include">
+              <e p="TestQuantity.cs" t="Include" />
               <e p="TestResult.cs" t="Include" />
               <e p="TestUnitOfMeasure.cs" t="Include" />
             </e>

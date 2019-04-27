@@ -6,7 +6,7 @@ namespace NWoolcan.Utils
 {
     internal static class QuantityChecker
     {
-        private static IList<UnitOfMeasure> _valids = new List<UnitOfMeasure>
+        private static readonly IList<UnitOfMeasure> Valids = new List<UnitOfMeasure>
         {
             UnitOfMeasure.Gram,
             UnitOfMeasure.Liter,
@@ -23,13 +23,13 @@ namespace NWoolcan.Utils
 
         internal static IReadOnlyList<UnitOfMeasure> GetValidUnitOfMeasures()
         {
-            return new ReadOnlyCollection<UnitOfMeasure>(_valids);
+            return new ReadOnlyCollection<UnitOfMeasure>(Valids);
         }
 
         internal static Result<Quantity> Check(Quantity quantity)
         {
             return Result<Quantity>.Ok(quantity)
-                                   .Where(q => _valids.Contains(q.UnitOfMeasure),
+                                   .Where(q => Valids.Contains(q.UnitOfMeasure),
                                        NotValidUnitOfMeasureMessage)
                                    .Where(q => q.Value >= 0,
                                        NegativeValueMessage)
