@@ -37,5 +37,19 @@ namespace NWoolcan.UnitTests.Utils
             res = Quantity.Of(8.8, UnitOfMeasure.Bottle33Cl);
             Assert.IsTrue(res.Failure);
         }
+
+        [TestMethod]
+        public void Compare()
+        {
+            var q1 = Quantity.Of(1, UnitOfMeasure.Gram).Value;
+            var q2 = Quantity.Of(2, UnitOfMeasure.Gram).Value;
+            var q3 = Quantity.Of(1, UnitOfMeasure.Liter).Value;
+            
+            Assert.IsTrue(q1.CompareTo(q2) < 0);
+            Assert.IsTrue(q1.CompareTo(q1) == 0);
+            Assert.IsTrue(q2.CompareTo(q1) > 0);
+            
+            Assert.IsTrue(q1.CompareTo(q3) != q3.CompareTo(q1));
+        }
     }
 }
