@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
+using CSharpFunctionalExtensions;
+
 namespace NWoolcan.Utils
 {
     internal static class QuantityChecker
@@ -28,13 +30,13 @@ namespace NWoolcan.Utils
 
         internal static Result<Quantity> Check(Quantity quantity)
         {
-            return Result<Quantity>.Ok(quantity)
-                                   .Where(q => Valids.Contains(q.UnitOfMeasure),
-                                       NotValidUnitOfMeasureMessage)
-                                   .Where(q => q.Value >= 0,
-                                       NegativeValueMessage)
-                                   .Where(q => q.UnitOfMeasure.Validate(q.Value),
-                                       NotValidValueMessage);
+            return Result.Ok(quantity)
+                         .Ensure(q => Valids.Contains(q.UnitOfMeasure),
+                             NotValidUnitOfMeasureMessage)
+                         .Ensure(q => q.Value.IsPositive(),
+                             NegativeValueMessage)
+                         .Ensure(q => q.UnitOfMeasure.Validate(q.Value),
+                             NotValidValueMessage);
         }
     }
 }

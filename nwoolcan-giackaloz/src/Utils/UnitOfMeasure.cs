@@ -10,9 +10,9 @@ namespace NWoolcan.Utils
 
     static class UnitOfMeasureExtensions
     {
-        public static bool IsPositive(this double v) => v >= 0;
+        internal static bool IsPositive(this double v) => v >= 0;
 
-        public static bool IsInteger(this double v) => v.Equals(Math.Floor(v));
+        internal static bool IsInteger(this double v) => v.Equals(Math.Floor(v));
         
         private static IDictionary<UnitOfMeasure, string> _symbols = new Dictionary<UnitOfMeasure, string>(
             new List<KeyValuePair<UnitOfMeasure, string>>

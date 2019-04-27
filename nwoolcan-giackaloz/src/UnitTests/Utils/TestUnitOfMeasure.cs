@@ -1,5 +1,7 @@
+using CSharpFunctionalExtensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NWoolcan.Utils;
+using Result = CSharpFunctionalExtensions.Result;
 
 namespace NWoolcan.UnitTests.Utils
 {

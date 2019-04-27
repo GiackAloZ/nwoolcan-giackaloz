@@ -1,4 +1,6 @@
 using System;
+using System.Data.SqlTypes;
+using CSharpFunctionalExtensions;
 
 namespace NWoolcan.Utils
 {
@@ -21,23 +23,17 @@ namespace NWoolcan.Utils
 
         public int CompareTo(Quantity other)
         {
-            if (ReferenceEquals(this, other)) return 0;
-            if (ReferenceEquals(null, other)) return 1;
             var valueComparison = Value.CompareTo(other.Value);
             return valueComparison != 0 ? valueComparison : UnitOfMeasure.CompareTo(other.UnitOfMeasure);
         }
 
         public bool Equals(Quantity other)
         {
-            if (ReferenceEquals(null, other)) return false;
-            if (ReferenceEquals(this, other)) return true;
             return Value.Equals(other.Value) && UnitOfMeasure == other.UnitOfMeasure;
         }
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
-            if (ReferenceEquals(this, obj)) return true;
             return obj.GetType() == this.GetType() && Equals((Quantity) obj);
         }
 

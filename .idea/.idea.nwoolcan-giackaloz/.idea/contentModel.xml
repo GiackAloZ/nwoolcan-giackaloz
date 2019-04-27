@@ -22,6 +22,18 @@
           </e>
         </e>
         <e p="src" t="Include">
+          <e p="Batch" t="Include">
+            <e p="Step" t="Include">
+              <e p="BasicStep.cs" t="Include" />
+              <e p="BottlingStep.cs" t="Include" />
+              <e p="DecoratorStep.cs" t="Include" />
+              <e p="IStep.cs" t="Include" />
+              <e p="IStepInfo.cs" t="Include" />
+              <e p="IStepType.cs" t="Include" />
+              <e p="Step.cs" t="Include" />
+              <e p="StepTypeEnum.cs" t="Include" />
+            </e>
+          </e>
           <e p="UnitTests" t="Include">
             <e p="utils" t="Include">
               <e p="TestQuantity.cs" t="Include" />
@@ -32,7 +44,7 @@
           <e p="utils" t="Include">
             <e p="Quantity.cs" t="Include" />
             <e p="QuantityChecker.cs" t="Include" />
-            <e p="Result.cs" t="Include" />
+            <e p="ResultGiackAloZ.cs" t="Include" />
             <e p="UnitOfMeasure.cs" t="Include" />
           </e>
         </e>

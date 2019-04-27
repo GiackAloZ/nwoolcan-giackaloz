@@ -32,10 +32,10 @@ namespace NWoolcan.UnitTests.Utils
         public void WrongCreation()
         {
             var res = Quantity.Of(-9, UnitOfMeasure.Gram);
-            Assert.IsTrue(res.Failure);
+            Assert.IsTrue(res.IsFailure);
 
             res = Quantity.Of(8.8, UnitOfMeasure.Bottle33Cl);
-            Assert.IsTrue(res.Failure);
+            Assert.IsTrue(res.IsFailure);
         }
 
         [TestMethod]
