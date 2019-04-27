@@ -14,7 +14,7 @@ namespace NWoolcan.Utils
 
         public static bool IsInteger(this double v) => v.Equals(Math.Floor(v));
         
-        private static Dictionary<UnitOfMeasure, string> _symbols = new Dictionary<UnitOfMeasure, string>(
+        private static IDictionary<UnitOfMeasure, string> _symbols = new Dictionary<UnitOfMeasure, string>(
             new List<KeyValuePair<UnitOfMeasure, string>>
             {
                 new KeyValuePair<UnitOfMeasure, string>(UnitOfMeasure.Liter, "L"),
@@ -26,7 +26,7 @@ namespace NWoolcan.Utils
                 new KeyValuePair<UnitOfMeasure, string>(UnitOfMeasure.BottleMagnum, "bot magnum"),
             });
         
-        private static Dictionary<UnitOfMeasure, Predicate<double>> _validators = new Dictionary<UnitOfMeasure, Predicate<double>>(
+        private static IDictionary<UnitOfMeasure, Predicate<double>> _validators = new Dictionary<UnitOfMeasure, Predicate<double>>(
             new List<KeyValuePair<UnitOfMeasure, Predicate<double>>>
             {
                 new KeyValuePair<UnitOfMeasure, Predicate<double>>(UnitOfMeasure.Liter, n => n.IsPositive()),
