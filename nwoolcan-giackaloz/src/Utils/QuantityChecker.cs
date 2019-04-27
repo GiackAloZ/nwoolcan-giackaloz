@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace NWoolcan.Utils
 {
-    static class QuantityChecker
+    internal static class QuantityChecker
     {
         private static IList<UnitOfMeasure> _valids = new List<UnitOfMeasure>
         {
@@ -17,14 +17,24 @@ namespace NWoolcan.Utils
             UnitOfMeasure.BottleMagnum
         };
 
-        static IReadOnlyList<UnitOfMeasure> GetValidUnitOfMeasures()
+        private const string NotValidUnitOfMeasureMessage = "Quantity unit of measure is not valid.";
+        private const string NegativeValueMessage = "Quantity value is negative.";
+        private const string NotValidValueMessage = "Quantity value is not valid.";
+
+        internal static IReadOnlyList<UnitOfMeasure> GetValidUnitOfMeasures()
         {
             return new ReadOnlyCollection<UnitOfMeasure>(_valids);
         }
 
-        static bool Check(Quantity q)
+        internal static Result<Quantity> Check(Quantity quantity)
         {
-            throw new NotImplementedException();
+            return Result<Quantity>.Ok(quantity)
+                                   .Where(q => _valids.Contains(q.UnitOfMeasure),
+                                       NotValidUnitOfMeasureMessage)
+                                   .Where(q => q.Value >= 0,
+                                       NegativeValueMessage)
+                                   .Where(q => q.UnitOfMeasure.Validate(q.Value),
+                                       NotValidValueMessage);
         }
     }
 }
