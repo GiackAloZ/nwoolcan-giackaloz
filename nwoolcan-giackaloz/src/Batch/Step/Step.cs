@@ -60,8 +60,8 @@ namespace NWoolcan.Batch.Step
         {
             return Result.Ok()
                          .Ensure(() => !IsFinalized, "Cannot finalize step because is already finalized.")
-                         .OnFailureCompensate(() => CheckFinalizationData(endDate, endSize, note))
-                         .OnFailureCompensate(() => _stepInfo.Finalize(endDate, endSize, note));
+                         .OnSuccess(() => CheckFinalizationData(endDate, endSize, note))
+                         .OnSuccess(() => _stepInfo.Finalize(endDate, endSize, note));
         }
     }
 }
