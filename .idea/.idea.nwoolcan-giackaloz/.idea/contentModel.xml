@@ -27,7 +27,9 @@
               <e p="BasicStep.cs" t="Include" />
               <e p="BottlingStep.cs" t="Include" />
               <e p="DecoratorStep.cs" t="Include" />
+              <e p="EnumStepFactory.cs" t="Include" />
               <e p="IStep.cs" t="Include" />
+              <e p="IStepFactory.cs" t="Include" />
               <e p="IStepInfo.cs" t="Include" />
               <e p="IStepType.cs" t="Include" />
               <e p="Step.cs" t="Include" />
