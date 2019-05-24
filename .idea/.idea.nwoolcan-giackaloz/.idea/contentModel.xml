@@ -23,6 +23,11 @@
         </e>
         <e p="src" t="Include">
           <e p="Batch" t="Include">
+            <e p="Batch.cs" t="Include" />
+            <e p="BatchMethod.cs" t="Include" />
+            <e p="IBatch.cs" t="Include" />
+            <e p="IBatchInfo.cs" t="Include" />
+            <e p="IBatchMethod.cs" t="Include" />
             <e p="Step" t="Include">
               <e p="BasicStep.cs" t="Include" />
               <e p="BottlingStep.cs" t="Include" />
@@ -44,6 +49,7 @@
             </e>
           </e>
           <e p="utils" t="Include">
+            <e p="IIdGenerator.cs" t="Include" />
             <e p="Quantity.cs" t="Include" />
             <e p="QuantityChecker.cs" t="Include" />
             <e p="ResultGiackAloZ.cs" t="Include" />

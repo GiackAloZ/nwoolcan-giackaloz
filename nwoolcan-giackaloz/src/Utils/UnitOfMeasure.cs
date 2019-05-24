@@ -8,7 +8,7 @@ namespace NWoolcan.Utils
         Liter, Gram, Bottle33Cl, Bottle50Cl, Bottle66Cl, Bottle75Cl, BottleMagnum
     }
 
-    static class UnitOfMeasureExtensions
+    public static class UnitOfMeasureExtensions
     {
         internal static bool IsPositive(this double v) => v >= 0;
 
