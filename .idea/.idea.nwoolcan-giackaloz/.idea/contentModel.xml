@@ -24,6 +24,7 @@
         <e p="src" t="Include">
           <e p="Batch" t="Include">
             <e p="Batch.cs" t="Include" />
+            <e p="BatchIDGenerator.cs" t="Include" />
             <e p="BatchMethod.cs" t="Include" />
             <e p="IBatch.cs" t="Include" />
             <e p="IBatchInfo.cs" t="Include" />
@@ -42,6 +43,13 @@
             </e>
           </e>
           <e p="UnitTests" t="Include">
+            <e p="Batch" t="Include">
+              <e p="Step" t="Include">
+                <e p="TestEnumStepFactory.cs" t="Include" />
+                <e p="TestStep.cs" t="Include" />
+              </e>
+              <e p="TestBatch.cs" t="Include" />
+            </e>
             <e p="utils" t="Include">
               <e p="TestQuantity.cs" t="Include" />
               <e p="TestResult.cs" t="Include" />

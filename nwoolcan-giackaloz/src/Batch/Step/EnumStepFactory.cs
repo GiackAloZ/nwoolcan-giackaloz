@@ -49,25 +49,25 @@ namespace NWoolcan.Batch.Step
                          {
                              if (st.Equals(StepTypeEnum.Mashing.ToStepType()))
                              {
-                                 return new BasicStep(st, DateTime.Now, MashingStepTypes);
+                                 return new BasicStep(st, startDate, MashingStepTypes);
                              }
                              else if (st.Equals(StepTypeEnum.Boiling.ToStepType()))
                              {
-                                 return new BasicStep(st, DateTime.Now, BoilingStepTypes);
+                                 return new BasicStep(st, startDate, BoilingStepTypes);
                              }
                              else if (st.Equals(StepTypeEnum.Fermenting.ToStepType()))
                              {
-                                 return new BasicStep(st, DateTime.Now, FermentingStepTypes);
+                                 return new BasicStep(st, startDate, FermentingStepTypes);
                              }
                              else if (st.Equals(StepTypeEnum.Aging.ToStepType()))
                              {
-                                 return new BasicStep(st, DateTime.Now, AgingStepTypes);
+                                 return new BasicStep(st, startDate, AgingStepTypes);
                              }
                              else if (st.Equals(StepTypeEnum.Packaging.ToStepType()))
                              {
-                                 return new BottlingStep(new BasicStep(st, DateTime.Now, PackagingStepTypes));
+                                 return new BottlingStep(new BasicStep(st, startDate, PackagingStepTypes));
                              }
-                             return new BasicStep(st, DateTime.Now, new HashSet<IStepType>());
+                             return new BasicStep(st, startDate, new HashSet<IStepType>());
                          });
         }
     }

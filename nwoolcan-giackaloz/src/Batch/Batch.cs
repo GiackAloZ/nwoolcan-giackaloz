@@ -4,6 +4,7 @@ using System.Linq;
 using CSharpFunctionalExtensions;
 using NWoolcan.Batch.Step;
 using NWoolcan.Utils;
+using Optional.Collections;
 using Optional.Unsafe;
 
 namespace NWoolcan.Batch
@@ -27,7 +28,7 @@ namespace NWoolcan.Batch
 
         public IStep CurrentStep => _steps.Last();
 
-        public Quantity CurrentSize => _steps.SkipLast(1).Last().Info.EndSize.ValueOrDefault() ?? Info.InitialSize;
+        public Quantity CurrentSize => _steps.SkipLast(1).LastOrNone().FlatMap(s => s.Info.EndSize).ValueOr(Info.InitialSize);
 
         public IEnumerable<IStep> Steps => _steps.AsReadOnly();
 

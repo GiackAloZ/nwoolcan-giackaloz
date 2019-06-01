@@ -45,7 +45,7 @@ namespace NWoolcan.Batch.Step
 
         public IReadOnlyCollection<IStepType> NextStepTypes { get; }
         
-        public bool IsFinalized { get; }
+        public bool IsFinalized { get; private set; }
 
         protected Step(FinalizableStepInfo stepInfo, ISet<IStepType> nextStepTypes)
         {
@@ -61,7 +61,8 @@ namespace NWoolcan.Batch.Step
             return Result.Ok()
                          .Ensure(() => !IsFinalized, "Cannot finalize step because is already finalized.")
                          .OnSuccess(() => CheckFinalizationData(endDate, endSize, note))
-                         .OnSuccess(() => _stepInfo.Finalize(endDate, endSize, note));
+                         .OnSuccess(() => _stepInfo.Finalize(endDate, endSize, note))
+                         .OnSuccess(() => IsFinalized = true);
         }
     }
 }
